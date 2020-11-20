@@ -1,0 +1,124 @@
+.RingLoader {
+  position: relative;
+  text-align: center;
+}
+.Ring {
+  animation-name: spinCCW;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  margin-bottom: 1.5em;
+  position: relative;
+  width: 9em;
+  height: 9em;
+  display: inline-block;
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    animation-name: spinCW;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: inherit;
+  }
+  &:before {
+    background: radial-gradient(25% 6% at 50% 7.5%, #fff 12.5%, rgba(255, 255, 255, 0) 50%),
+      radial-gradient(25% 6% at 50% 92.5%, #fff 12.5%, rgba(255, 255, 255, 0) 50%),
+      radial-gradient(
+        100% 100% at center,
+        rgba(0, 0, 0, 0) 34%,
+        rgba(0, 0, 0, 0.3) 34%,
+        rgba(0, 0, 0, 0) 38% 46%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0) 50%
+      );
+    z-index: 2;
+  }
+  &:after {
+    box-shadow: 0.5em 0.5em 0.25em 0 rgba(0, 0, 0, 0.25), 0.5em 0.5em 0.25em 1.5em rgba(0, 0, 0, 0.25) inset;
+  }
+}
+
+.item {
+  border-radius: 50%;
+  box-shadow: 0.25em 0.5em 0 inset;
+  top: 50%;
+  left: 50%;
+  width: 7.5em;
+  height: 7.5em;
+  transform: translate(-50%, -50%) translateX(-0.75em);
+  z-index: 1;
+  position: absolute;
+}
+
+.item:nth-of-type(2n + 1) {
+  color: #ffffff;
+}
+
+@for $index from 2 to 9 {
+  .item:nth-of-type(#{$index}) {
+    transform: translate(-50%, -50%) rotate(#{45 * ($index - 1)}deg) translateX(-0.75em);
+  }
+}
+
+@keyframes spinCW {
+  to {
+    transform: rotate(90deg);
+  }
+}
+@keyframes spinCCW {
+  to {
+    transform: rotate(-90deg);
+  }
+}
+
+.status {
+  text-align: center;
+  // text-shadow: -2px -2px 0 #17181c, 0 -2px 0 #17181c, 2px -2px 0 #17181c, 2px 0 0 #17181c, 2px 2px 0 #17181c, 0 2px 0 #17181c, -2px 2px 0 #17181c,
+  //   -2px 0 0 #17181c;
+  font-family: Lobster, sans-serif;
+}
+
+.dot {
+  animation: appear1 1s steps(1, start) infinite;
+}
+.dot:nth-child(2) {
+  animation-name: appear2;
+}
+.dot:nth-child(3) {
+  animation-name: appear3;
+}
+
+@keyframes appear1 {
+  from {
+    visibility: hidden;
+  }
+  33%,
+  to {
+    visibility: visible;
+  }
+}
+@keyframes appear2 {
+  from,
+  33% {
+    visibility: hidden;
+  }
+  67%,
+  to {
+    visibility: visible;
+  }
+}
+@keyframes appear3 {
+  from,
+  67% {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}

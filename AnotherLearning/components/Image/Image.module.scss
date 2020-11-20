@@ -1,0 +1,62 @@
+.Image {
+  position: relative;
+  overflow: hidden;
+  &.zoomCursor {
+    cursor: zoom-in;
+  }
+}
+
+.placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: 2px;
+  background-image: url('https://via.placeholder.com/1');
+  background-size: cover;
+  background-position: center;
+}
+
+.opacity0 {
+  opacity: 0;
+}
+.opacity1 {
+  opacity: 1;
+  min-height: 300px;
+}
+
+.Preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.previewContent {
+  position: absolute;
+  transition-property: all;
+  will-change: trasform;
+  transform-origin: top left;
+}
+
+.previewUnderlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #252323;
+  opacity: 0.9;
+  cursor: zoom-out;
+}
+
+.imageBackground {
+  background-size: cover;
+  background-position: center;
+}
+.parallax {
+  background-attachment: fixed;
+}
