@@ -71,3 +71,40 @@ const FormBaseComponent: FC<BaseProps> = ({ data, renderField, childrenFirst, ch
 const FormBase = memo(FormBaseComponent);
 
 export default FormBase;
+
+
+{/* <FormBase
+      onChange={console.log}
+      onSubmit={console.log}
+      childrenFirst={<button type='submit'>Submit</button>}
+      childrenEnd={<button type='reset'>Reset</button>}
+      data={[
+          {
+            type: 'input',
+            fieldLabel: 'User Name',
+            fieldName: 'userName',
+            validateRule: { required: true, max: 10, min: 1 },
+            id: 1
+          },
+          {
+            type: 'input',
+            fieldLabel: 'Password',
+            fieldName: 'password',
+            validateRule: { required: true, max: 10, min: 1 },
+            id: 1
+          }
+        ]}
+        renderField={({ fieldProperty, hasError, onChange }) => {
+          return (
+            <div>
+              {fieldProperty.fieldLabel}
+              <input
+                  onChange={(e) => {
+                    onChange(e.target.value);
+                  }}
+              />
+              {JSON.stringify(hasError)}
+            </div>
+          );
+        }}
+      /> */}
