@@ -1,0 +1,3 @@
+// Tests if value is truthy. It is equivalent to assert.equal(!!value, true, message).
+
+// If value is not truthy, an AssertionError is thrown with a message property set equal to the value of the message parameter. If the message parameter is undefined, a default error message is assigned. If the message parameter is an instance of an Error then it will be thrown instead of the AssertionError. If no arguments are passed in at all message will be set to the string: 'No value argument passed to `assert.ok()`'.
