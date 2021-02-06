@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build": "yarn tsc"
+  },
   "devDependencies": {
     "typescript": "^4.1.2"
   }
