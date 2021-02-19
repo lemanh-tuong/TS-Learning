@@ -10,4 +10,5 @@ const data = [1, 2, 3, 4, [4, 5, 6] as const] as const;
 type Case1 = CheckElementExistInArray<typeof data, 1>; // true;
 type Case2 = CheckElementExistInArray<typeof data, 6> // false;
 type Case3 = CheckElementExistInArray<typeof data, [4, 5, 6]> // false
+type Case4 = CheckElementExistInArray<typeof data, readonly [4, 5, 6]> // true
 
