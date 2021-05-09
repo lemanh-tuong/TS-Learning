@@ -1,0 +1,1 @@
+export declare type Join<T extends unknown[], D extends string> = T extends [] ? "" : T extends [string | number | boolean | bigint] ? `${T[0]}` : T extends [string | number | boolean | bigint, ...infer U] ? `${T[0]}${D}${Join<U, D>}` : string;
