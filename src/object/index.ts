@@ -1,7 +1,9 @@
 export * from "./AppendToObjectWithKeyValue";
 export * from "./DeepMutable";
+export * from "./DeepPartial";
+export * from "./DeepReadonly";
 export * from "./ExclusiveObject";
-export * from "./FilteredKeys";
+export * from "./FilteredKeysByDataType";
 export * from "./FlatObject";
 export * from "./GetOptional";
 export * from "./GetRequired";
@@ -11,4 +13,3 @@ export * from "./Mutable";
 export * from "./PathKeyOfObject";
 export * from "./PathValueOfObject";
 export * from "./PropType";
-export * from "./Readonly";
