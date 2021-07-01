@@ -1,3 +1,4 @@
+// https://github.com/krzkaczor/ts-essentials
 /** Essentials */
 type Primitive = string | number | boolean | bigint | symbol | undefined | null;
 type Builtin = Primitive | Function | Date | Error | RegExp;

@@ -1,5 +1,6 @@
 export * from "./AppendToObjectWithKeyValue";
 export * from "./DeepMutableObject";
+export * from "./DeepNonNullableObject";
 export * from "./DeepPartialObject";
 export * from "./DeepReadonlyObject";
 export * from "./DeepRequiredObject";

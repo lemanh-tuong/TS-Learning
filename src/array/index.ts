@@ -4,6 +4,7 @@ export * from "./Concat";
 export * from "./DeepArrayToUnion";
 export * from "./DeepFlatArray";
 export * from "./DeepMutableArray";
+export * from "./DeepNonNullableArray";
 export * from "./DeepPartialArray";
 export * from "./DeepReadonlyArray";
 export * from "./DeepRequiredArray";
