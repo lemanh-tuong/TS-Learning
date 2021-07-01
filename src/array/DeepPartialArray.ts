@@ -1,13 +1,15 @@
-export type DeepPartialArray<T> = T extends any[]
-	? _DeepPartialArray<T[number]>
+// type DeepPartial<T> = {
+// 	[P in keyof T]?: T[P] extends Array<infer U>
+// 		? Array<DeepPartial<U>>
+// 		: T[P] extends ReadonlyArray<infer U>
+// 		? ReadonlyArray<DeepPartial<U>>
+// 		: DeepPartial<T[P]>;
+// };
+export type DeepPartialArray<T> = T extends Function
+	? T
 	: T extends object
-	? _DeepPartialObject<T>
+	? { [P in keyof T]?: DeepPartialArray<T[P]> }
 	: T;
-
-interface _DeepPartialArray<T> extends Array<DeepPartialArray<T>> {}
-type _DeepPartialObject<T> = {
-	[P in keyof T]+?: DeepPartialArray<T[P]>;
-};
 
 const obj = {
 	key1: {
@@ -21,7 +23,7 @@ const obj = {
 				},
 			},
 		},
-		key12: "abc",
+		key12: {},
 	},
 } as const;
 
