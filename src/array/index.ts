@@ -6,6 +6,7 @@ export * from "./DeepFlatArray";
 export * from "./DeepMutableArray";
 export * from "./DeepPartialArray";
 export * from "./DeepReadonlyArray";
+export * from "./DeepRequiredArray";
 export * from "./DropFromHead";
 export * from "./DropFromTail";
 export * from "./FindDuplicateElementInArray";

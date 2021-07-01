@@ -2,6 +2,7 @@ export * from "./AppendToObjectWithKeyValue";
 export * from "./DeepMutableObject";
 export * from "./DeepPartialObject";
 export * from "./DeepReadonlyObject";
+export * from "./DeepRequiredObject";
 export * from "./ExclusiveObject";
 export * from "./FilteredKeysByDataType";
 export * from "./FlatObject";
