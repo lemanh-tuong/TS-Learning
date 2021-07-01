@@ -1,12 +1,12 @@
-export type Mutable<T> = {
-  -readonly [K in keyof T]: T[K];
+export type MutableArray<T> = {
+	-readonly [K in keyof T]: T[K];
 };
 
-// const arrA = [1, 2, 3, 4] as const;
-// const arrB = [1, [2, [3, [4]]]] as const;
+const arrA = [1, 2, 3, 4] as const;
+const arrB = [1, [2, [3, [4]]]] as const;
 
-// const case1: Mutable<typeof arrA> = [1, 2, 3, 4]; // Result: [1, 2, 3, 4]
-// const case2: Mutable<typeof arrB> = [1, [2, [3, [4]]]] // Result: [1, readonly [2, readonly [3, readonly [4]]]]
+const case1: MutableArray<typeof arrA> = [1, 2, 3, 4]; // Result: [1, 2, 3, 4]
+const case2: MutableArray<typeof arrB> = [1, [2, [3, [4]]]]; // Result: [1, readonly [2, readonly [3, readonly [4]]]]
 
 // const objA = { name: 'Tuong', age: 20 } as const;
 // const objB = { name: 'Tuong', age: 20, data: { id: '123', anotherProperty: false } } as const;
